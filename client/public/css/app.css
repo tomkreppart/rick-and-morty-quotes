@@ -1,0 +1,169 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Life+Savers);
+/*@font-face {
+  font-family: 'GetSchwifty';
+  src: url('get_schwifty.ttf')  format('truetype'),
+}*/
+/*
+COLORS
+
+light blue: #00b3cb
+light green: #04FA69
+dark blue: #014C44
+*/
+
+body {
+	background: #DDD;
+	font-size: 15px;
+	font-family:'Life Savers';
+}
+#wrap {
+  margin: 26px 20px;
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  float: right;
+  padding: 0;
+  position: relative;
+}
+
+#search {
+  height: 60px;
+  font-size: 45px;
+  display: inline-block;
+  font-family:'Life Savers';
+  font-weight: 200;
+  border: none;
+  outline: none;
+  color: #04FA69;
+  padding: 3px;
+  padding-right: 60px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+
+#search:focus:hover {
+  border-bottom: 1px solid #00B3CB;
+}
+
+#search:focus {
+  width: 400px;
+  z-index: 1;
+  border-bottom: 1px solid #00B3CB;
+  cursor: text;
+}
+#search_submit {
+  height: 67px;
+  width: 63px;
+  display: inline-block;
+  color:red;
+  float: right;
+  background: url(./images/search-icon.png) center center no-repeat;
+  text-indent: -10000px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+
+#search_submit:hover {
+  opacity: 0.8;
+}
+
+
+.head {
+  height: 120px;
+  background-color: #222;
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo img{
+  height: 100px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.logo p {
+  color: #f7901e;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 60px;
+  line-height: 10px;
+  display:inline;
+}
+
+.material-icons.md-48 { font-size: 60px; }
+
+.material-icons.md-light:hover { color: #04FA69; }
+
+.material-icons.md-light { color: #00B3CB; }
+
+.nav-bar {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+label {
+	color: #292929;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.media-heading {
+	font-size: 30px;
+}
+
+.nav-pills, .pull-right {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.new-btn {
+	padding: 10px 15px;
+}
+
+.edit-btn {
+	color: rgb(46, 109, 164);
+	float: right;
+	margin-top: 0px;
+	background-color: transparent;
+	margin-right: 5px;
+}
+
+.voicedBy {
+	margin-right: 5px;
+	margin-top: 15px;
+}
+
+#bio {
+	height:80px;
+}
+
+.edit-form {
+	margin-top: 30px;
+}
+
+[ng-click], [data-ng-click], [x-ng-click] {
+  cursor: pointer;
+}
+
+
+#sound-btn {
+	height: 40px;
+	min-width: 40px;
+	width: 40px;
+}

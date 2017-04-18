@@ -1,0 +1,74 @@
+<main class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form name="$ctrl.editForm" ng-submit="$ctrl.updateCharacter()" class="well edit-form" novalidate>
+
+        <h1>Editing... <span ng-bind="$ctrl.character.name"></span></h1>
+
+        <div class="form-group label-floating">
+          <label class="control-label" for="edit-name">Name</label>
+          <input
+          id="edit-name"
+          name="edit-name"
+          class="form-control"
+          ng-model="$ctrl.character.name"
+          minlength="1"
+          type="text"
+          value="$ctrl.editForm.name"
+          required>
+        </div>
+
+        <div class="form-group label-floating">
+          <label class="control-label" for="bio">Bio</label>
+          <textarea
+          rows="6"
+          id="bio"
+          name="bio"
+          class="form-control"
+          ng-model="$ctrl.character.bio"
+          minlength="1"
+          type="text"
+          value="$ctrl.editForm.bio"
+          required></textarea>
+        </div>
+
+        <div class="form-group label-floating">
+          <label class="control-label" for="voiceActor">Voice Actor</label>
+          <input
+          id="voiceActor"
+          name="voiceActor"
+          class="form-control"
+          ng-model="$ctrl.character.voiceActor"
+          minlength="1"
+          type="text"
+          value="$ctrl.editForm.voiceActor"
+          required>
+        </div>
+
+        <div class="form-group label-floating">
+          <label class="control-label" for="imageUrl">Image URL</label>
+          <input
+          id="imageUrl"
+          name="imageUrl"
+          class="form-control"
+          ng-model="$ctrl.character.imageUrl"
+          minlength="1"
+          type="text"
+          value="$ctrl.editForm.imageUrl"
+          required>
+        </div>
+        <div class="form-group">
+          <button ui-sref="list-character" class="btn btn-raised">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-info btn-raised" ng-disabled="$ctrl.editForm.$invalid" ng-click="$ctrl.updateCharacter()">
+            Update Character
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</main>

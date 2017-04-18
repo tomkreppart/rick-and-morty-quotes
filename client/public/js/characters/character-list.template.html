@@ -1,0 +1,195 @@
+<main class="container">
+
+  <div class="pull-right">
+    <a class="btn btn-raised btn-primary new-btn" ng-click="$ctrl.togglePostForm()">New Character</a>
+  </div>
+
+
+  <ul class="nav nav-pills">
+    <!-- <li role="presentation" class="active">
+      <div class="form-group">
+        <input type="search" class="form-control search-form" placeholder="Filter" ng-model="$ctrl.searchService.search">
+      </div>
+    </li> -->
+    <li class="btn-group" uib-dropdown is-open="status.isopen">
+      <a id="single-button" type="button" class="btn btn-raised btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+        Sort By {{$ctrl.sortName}} <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+        <li role="menuitem">
+          <a href="#" ng-click="$ctrl.sortType='-voteCount'; $ctrl.sortName='Most Popular'">Most Popular</a>
+        </li>
+        <li role="menuitem">
+          <a href="#" ng-click="$ctrl.sortType='createdAt'; $ctrl.sortName='Oldest'">Oldest</a>
+        </li>
+        <li role="menuitem">
+          <a href="#" ng-click="$ctrl.sortType='name'; $ctrl.sortName='Name'">Name</a>
+        </li>
+        <li role="menuitem">
+          <a href="#" ng-click="$ctrl.sortType='-quotes.length'; $ctrl.sortName='Most Quotes'">Most Quotes</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="row">
+    <div class="col-md-12 newForm">
+
+      <form name="$ctrl.newPostForm" ng-submit="$ctrl.createCharacter()" ng-if="$ctrl.toggleForm" class="well" novalidate>
+
+        <div class="form-group label-floating"
+        ng-class="{ 'has-error': $ctrl.newPostForm.name.$touched && $ctrl.newPostForm.name.$invalid,
+        'has-success': $ctrl.newPostForm.name.$valid }">
+          <label class="control-label" for="name">Name</label>
+          <input
+          id="name"
+          name="name"
+          class="form-control"
+          ng-model="$ctrl.character.name"
+          minlength="1"
+          type="text"
+          required>
+        </div>
+
+        <div class="form-group label-floating"
+        ng-class="{
+        'has-error': $ctrl.newPostForm.bio.$touched &&
+        $ctrl.newPostForm.bio.$invalid,
+        'has-success': $ctrl.newPostForm.bio.$valid }">
+          <label class="control-label" for="bio">Bio</label>
+          <textarea
+          id="bio"
+          name="bio"
+          class="form-control"
+          ng-model="$ctrl.character.bio"
+          minlength="1"
+          type="text"
+          required></textarea>
+        </div>
+
+        <div class="form-group label-floating"
+        ng-class="{ 'has-error': $ctrl.newPostForm.voiceActor.$touched && $ctrl.newPostForm.voiceActor.$invalid,
+        'has-success': $ctrl.newPostForm.voiceActor.$valid }">
+          <label class="control-label" for="voiceActor">Voice Actor</label>
+          <input
+          id="voiceActor"
+          name="voiceActor"
+          class="form-control"
+          ng-model="$ctrl.character.voiceActor"
+          minlength="1"
+          type="text"
+          required>
+        </div>
+
+        <div class="form-group label-floating"
+        ng-class="{ 'has-error': $ctrl.newPostForm.imageUrl.$touched && $ctrl.newPostForm.imageUrl.$invalid,
+        'has-success': $ctrl.newPostForm.imageUrl.$valid }">
+          <label class="control-label" for="imageUrl">Image URL</label>
+          <input
+          id="imageUrl"
+          name="imageUrl"
+          class="form-control"
+          ng-model="$ctrl.character.imageUrl"
+          minlength="1"
+          type="text"
+          required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary"
+          ng-disabled="$ctrl.newPostForm.$invalid"
+          ng-click="$ctrl.createCharacter()">
+            Create Character
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+  <div class="row profiles-contain">
+    <div class="col-md-12">
+
+      <div class="well profiles" ng-repeat="character in $ctrl.characters | filter:$ctrl.searchService.search | orderBy:$ctrl.sortType">
+        <div class="media-left">
+          <img class="media-object" ng-src="{{character.imageUrl}}">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">
+            {{character.name}}
+            |
+            <a ng-click="$ctrl.voteUp(character)"><i class="glyphicon glyphicon-arrow-up"></i></a>
+            <a ng-click="$ctrl.voteDown(character)"><i class="glyphicon glyphicon-arrow-down"></i></a>
+            {{character.voteCount}}
+            <a class="btn btn-raised btn-info edit-btn" ui-sref="edit-character({id: character.id})">Edit Character</a>
+          </h4>
+          <div class="text-right voicedBy">
+            <em>Voiced By: {{character.voiceActor}}</em>
+          </div>
+          </br>
+          <p>
+            {{character.bio}}
+          </p>
+          <div>
+            <span am-time-ago="character.createdAt"></span>
+            |
+            <i class="glyphicon glyphicon-comment"></i>
+            <a ng-click="vm.quotes=!vm.quotes">
+
+              <ng-pluralize count="character.quotes.length"
+                when="{'0': '0 Quotes', 'one': '1 Quote', 'other': '{} Quotes' }">
+              </ng-pluralize>
+            </a>
+          </div>
+
+          <div class="row">
+            <div class="col-md-offset-1" ng-if="vm.quotes">
+              <hr>
+              <p ng-repeat="quote in character.quotes">
+                <!-- preload="auto" -->
+                <audio id="{{quote.id}}" src="{{quote.soundUrl}}" preload="auto" controls>
+                </audio>
+                <!-- <a href="javascript:void(0)" id="sound-btn" class="btn btn-default btn-fab" ng-click="document.getElementById(quote.id).play()">
+                  <i class="material-icons">volume_up</i>
+                </a> -->
+                ~ {{quote.content}}
+              </p>
+              <hr>
+              <form name="$ctrl.newQuoteForm" ng-submit="$ctrl.createQuote(character)" class="form-inline">
+
+                <h3>Add New Quote</h3>
+                <div class="form-group label-floating">
+                  <label class="control-label" for="content">Quote Text</label>
+                  <input
+                  id="content"
+                  name="content"
+                  class="form-control"
+                  ng-model="character.newQuote.content"
+                  minlength="1"
+                  type="text"
+                  required>
+                </div>
+                <div class="form-group label-floating">
+                  <label class="control-label" for="soundUrl">Sound URL</label>
+                  <input
+                  id="soundUrl"
+                  name="soundUrl"
+                  class="form-control"
+                  ng-model="character.newQuote.soundUrl"
+                  minlength="1"
+                  type="text"
+                  required>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-raised btn-info">
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
