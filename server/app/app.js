@@ -11,15 +11,15 @@ if (process.env.NODE_ENV !== 'test') {
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static(path.join(__dirname, '/../', 'node_modules')))
+// app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static(path.join(__dirname, '/../', 'node_modules')))
 
 app.use('/api/characters', require('./routes/characters'))
 app.use('/api/characters', require('./routes/quotes'))
 
-app.use('*', function(req, res, next) {
-  res.sendFile('index.html', {root: path.join(__dirname, 'public')})
-})
+// app.use('*', function(req, res, next) {
+//   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
+// })
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found')
