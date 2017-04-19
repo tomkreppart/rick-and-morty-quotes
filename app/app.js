@@ -1,15 +1,17 @@
 const express = require('express')
 const path = require('path')
+const logger = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const app = express()
 
 if (process.env.NODE_ENV !== 'test') {
-  const logger = require('morgan')
-  app.use(logger('dev'))
-}
 
+
+}
+app.use(logger('dev'))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors())
 // app.use(express.static(path.join(__dirname, 'public')))
 // app.use(express.static(path.join(__dirname, '/../', 'node_modules')))

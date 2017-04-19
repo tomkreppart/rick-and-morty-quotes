@@ -654,21 +654,21 @@ exports.seed = function(knex, Promise) {
         //   content: `"Blim Blam"`,
         //   soundUrl: "./css/soundclips/"
         // },
-        {
-          character_id: 33,
-          content: `"Like we say in Brooklyn...we're walkin' here!"`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 34,
-          content: `"Oh, this is going to be such a mindf**k!"`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 35,
-          content: `"There's nothing more noble or free than the heart of a horse"`,
-          soundUrl: "./css/soundclips/"
-        },
+        // {
+        //   character_id: 33,
+        //   content: `"Like we say in Brooklyn...we're walkin' here!"`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 34,
+        //   content: `"Oh, this is going to be such a mindf**k!"`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 35,
+        //   content: `"There's nothing more noble or free than the heart of a horse"`,
+        //   soundUrl: "./css/soundclips/"
+        // },
         // {
         //   character_id: 36,
         //   content: `"Dr. Xenon Bloom"`,
@@ -689,61 +689,61 @@ exports.seed = function(knex, Promise) {
         //   content: `"General Nathan"`,
         //   soundUrl: "./css/soundclips/"
         // },
-        {
-          character_id: 40,
-          content: `"My story begins at the dawn of time in the far away realm of Alphabetrium!"`,
-          soundUrl: "./css/soundclips/"
-        },
+        // {
+        //   character_id: 40,
+        //   content: `"My story begins at the dawn of time in the far away realm of Alphabetrium!"`,
+        //   soundUrl: "./css/soundclips/"
+        // },
         // {
         //   character_id: 41,
         //   content: `"Jon"`,
         //   soundUrl: "./css/soundclips/"
         // },
-        {
-          character_id: 42,
-          content: `"Is it important we know who Jan Michael Vincent was in order to get this?” —Morty to Rick`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 43,
-          content: `"Pluto's a fucking planet, BITCH!"`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 44,
-          content: `"Just let this happen..."`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 45,
-          content: `"I'm very discreet. I have no code of ethics. I will kill anyone, anywhere. Children, animals, old people, doesn't matter. I just love killing."`,
-          soundUrl: "./css/soundclips/"
-        },
+        // {
+        //   character_id: 42,
+        //   content: `"Is it important we know who Jan Michael Vincent was in order to get this?” —Morty to Rick`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 43,
+        //   content: `"Pluto's a fucking planet, BITCH!"`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 44,
+        //   content: `"Just let this happen..."`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 45,
+        //   content: `"I'm very discreet. I have no code of ethics. I will kill anyone, anywhere. Children, animals, old people, doesn't matter. I just love killing."`,
+        //   soundUrl: "./css/soundclips/"
+        // },
         // {
         //   character_id: 46,
         //   content: `"Lucy"`,
         //   soundUrl: "./css/soundclips/"
         // },
-        {
-          character_id: 47,
-          content: `"You don't know me!"`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 48,
-          content: `"Oh no, he just got ran over and chewed up by the tires..."`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 49,
-          content: `"Calling me Gearhead is like calling a Chinese person Asia face!"`,
-          soundUrl: "./css/soundclips/"
-        },
-        {
-          character_id: 50,
-          content: `"I'm not going to tell you these coins will increase in value, or even hold their current value. The truth is, you bought 'em because you like 'em. They have value to you. That's what matters."`,
-          soundUrl: "./css/soundclips/"
-        },
+        // {
+        //   character_id: 47,
+        //   content: `"You don't know me!"`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 48,
+        //   content: `"Oh no, he just got ran over and chewed up by the tires..."`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 49,
+        //   content: `"Calling me Gearhead is like calling a Chinese person Asia face!"`,
+        //   soundUrl: "./css/soundclips/"
+        // },
+        // {
+        //   character_id: 50,
+        //   content: `"I'm not going to tell you these coins will increase in value, or even hold their current value. The truth is, you bought 'em because you like 'em. They have value to you. That's what matters."`,
+        //   soundUrl: "./css/soundclips/"
+        // },
         // {
         //   character_id: 51,
         //   content: `"Stealy"`,
@@ -754,11 +754,11 @@ exports.seed = function(knex, Promise) {
         //   content: `"Unity"`,
         //   soundUrl: "./css/soundclips/"
         // },
-        {
-          character_id: 53,
-          content: `"Eek barba durkel, somebody's gonna get laid in college."`,
-          soundUrl: "./css/soundclips/"
-        },
+        // {
+        //   character_id: 53,
+        //   content: `"Eek barba durkel, somebody's gonna get laid in college."`,
+        //   soundUrl: "./css/soundclips/"
+        // },
       ]);
     });
 };
